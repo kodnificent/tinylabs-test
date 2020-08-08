@@ -15,7 +15,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Getchange - Victor Mbamara (Kodnificent)',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -68,5 +68,6 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    extractCss: true
   }
 }

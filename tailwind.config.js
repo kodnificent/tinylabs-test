@@ -4,8 +4,21 @@
 ** Docs: https://tailwindcss.com/docs/configuration
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        primary: '#2BDA53',
+        'dark-accent': '#013C61',
+        gray: {
+          ...defaultTheme.colors.gray,
+          100: '#F6F8F8',
+        }
+      }
+    }
+  },
   variants: {},
   plugins: [],
   purge: {

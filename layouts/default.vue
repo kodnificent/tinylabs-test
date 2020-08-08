@@ -4,59 +4,48 @@
   </div>
 </template>
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+<style lang="sass">
+html
+  @apply text-gray-800 antialiased leading-normal
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
+h1, h2, h3, h4, h5, h6, p
+  @apply text-dark-accent
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
+h1, h2, h3, h4, h5, h6
+  @apply leading-tight font-medium
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
+h1
+  @apply text-2xl
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
+h2
+  @apply text-xl
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+h3
+  @apply text-lg
+
+a
+  @apply text-primary no-underline outline-none
+  &:focus
+    @apply outline-none
+
+button
+  @apply outline-none
+  &:focus
+    @apply outline-none
+  &:disabled,
+  &[disabled],
+  &.disabled
+    @apply opacity-50 cursor-not-allowed
+
+.btn
+  box-shadow: 0px 7px 15px rgba(43, 218, 83, 0.2)
+  border-radius: 3px
+  text-transform: capitalize
+  @apply font-medium p-2
+  &:focus, &:active
+    @apply outline-none shadow-outline
+  &--lg
+    @apply text-lg
+  &--sm
+    @apply text-sm p-1
 </style>
