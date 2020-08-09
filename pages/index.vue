@@ -35,7 +35,7 @@
       </div>
 
       <!-- action area -->
-      <div class="flex flex-wrap mt-9">
+      <div class="flex flex-wrap items-center mt-9">
         <form @submit.prevent>
           <label class="sr-only">
             Change role of selected users
@@ -61,68 +61,22 @@
         </form>
 
         <!-- eslint-disable-next-line -->
-        <div>
-        </div>
+        <form class="search-form" @submit.prevent>
+          <label class="search-label">
+            <search-icon />
+            <span class="sr-only">search employee</span>
+          </label>
+
+          <input placeholder="Enter staff name here..." class="search-input" type="search">
+        </form>
       </div> <!-- /action area ends -->
 
       <div class="mt-8 overflow-x-auto">
-        <data-table :items="items" />
+        <data-table />
       </div>
     </main>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      endpoint_uri: '',
-      items: [
-        {
-          id: 1,
-          first_name: 'Victor',
-          last_name: 'Mbamara',
-          email: 'victor@example.com',
-          phone: '08153035817',
-          role: 'Admin'
-        },
-        {
-          id: 2,
-          first_name: 'Victor',
-          last_name: 'Mbamara',
-          email: 'victor@example.com',
-          phone: '08153035817',
-          role: 'Admin'
-        },
-        {
-          id: 3,
-          first_name: 'Victor',
-          last_name: 'Mbamara',
-          email: 'victor@example.com',
-          phone: '08153035817',
-          role: 'Admin'
-        },
-        {
-          id: 4,
-          first_name: 'Victor',
-          last_name: 'Mbamara',
-          email: 'victor@example.com',
-          phone: '08153035817',
-          role: 'Admin'
-        },
-        {
-          id: 5,
-          first_name: 'Victor',
-          last_name: 'Mbamara',
-          email: 'victor@example.com',
-          phone: '08153035817',
-          role: 'Admin'
-        }
-      ]
-    }
-  }
-}
-</script>
 
 <style lang="sass">
   .custom-select
@@ -145,4 +99,22 @@ export default {
       @apply outline-none shadow-outline
       option[disabled]
         @apply text-gray-500
+
+  .search-form
+    @apply relative mt-4 w-full
+    @screen md
+      width: 300px
+      @apply ml-4 mt-0
+
+  .search-input
+    border: 1px solid rgba(106, 126, 138, 0.4)
+    border-radius: 3px
+    padding-top: .35rem
+    padding-bottom: .35rem
+    @apply pl-2 pr-4 w-full
+    &:focus, &:active
+      @apply outline-none shadow-outline
+
+  .search-label
+    @apply absolute right-0 flex items-center px-2 h-full
 </style>

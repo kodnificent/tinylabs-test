@@ -29,7 +29,7 @@
       class="pt-16 md:pt-24 pb-8 w-full px-4 md:px-8 xl:px-12
       flex flex-col justify-between xl:w-3/5"
     >
-      <!-- signup form-->
+      <!-- signup form -->
       <div class="xl:w-3/5 mx-auto">
         <div class="text-center xl:text-left">
           <h1 class="text-xl md:text-2xl xl:text-3xl">
@@ -42,26 +42,26 @@
         </div>
 
         <form class="form" @submit.prevent="submitForm">
-          <div class="form-group flex flex-wrap">
+          <div class="form__group flex flex-wrap">
             <div class="w-full xl:w-1/2 xl:pr-5 mb-4 xl:mb-0">
-              <label class="form-label">first name</label>
-              <input type="text" class="form-control" value="Jane">
+              <label class="form__label">first name</label>
+              <input type="text" class="form__control" value="Jane">
             </div>
 
             <div class="w-full xl:w-1/2 xl:pl-5">
-              <label class="form-label">last name</label>
-              <input type="text" class="form-control" value="Clement">
+              <label class="form__label">last name</label>
+              <input type="text" class="form__control" value="Clement">
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">email</label>
-            <input type="email" class="form-control" value="jane.clement@gmail.com">
+          <div class="form__group">
+            <label class="form__label">email</label>
+            <input type="email" class="form__control" value="jane.clement@gmail.com">
           </div>
 
-          <div class="form-group">
-            <label class="form-label">password</label>
-            <input type="password" class="form-control" value="**********">
+          <div class="form__group">
+            <label class="form__label">password</label>
+            <input type="password" class="form__control" value="**********">
           </div>
 
           <div class="mt-12 flex justify-center md:justify-end">
@@ -126,18 +126,4 @@ export default {
       &:not(:first-child)
         margin-left: 0.5rem
       &--current
-
-  .form
-    box-shadow: 0px 20px 50px #EAEEE9
-    @apply mt-8 bg-white py-6 px-10 rounded
-    .form-group
-      @apply mb-4 w-full
-      .form-label
-        @apply capitalize text-sm
-        color: #6A7E8A
-      .form-control
-        @apply border-none w-full mt-1 py-1 px-1 text-dark-accent transition-colors duration-200 ease-linear
-        border-bottom: 1px solid #E6E7EB
-        &:focus, &:active
-          @apply shadow-outline outline-none
 </style>

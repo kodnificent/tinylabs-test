@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <th>
-          <button class="checkbox">
+          <button class="checkbox" :data-checked="allItemsAreChecked" @click.prevent="toggleCheckAllItems()">
             <span class="sr-only">select all</span>
           </button>
         </th>
@@ -21,7 +21,7 @@
     <tbody>
       <tr v-for="item in items" :key="item.id">
         <td>
-          <button class="checkbox">
+          <button class="checkbox" :data-checked="item.is_checked" @click.prevent="toggleItemCheck(item)">
             <span class="sr-only">select item</span>
           </button>
         </td>
@@ -32,7 +32,7 @@
         <td><span class="data-text">{{ item.role }}</span></td>
         <!-- actions -->
         <td>
-          <button>
+          <button @click.prevent="deleteItem(item)">
             <trash-icon />
             <span class="sr-only">delete item</span>
           </button>
@@ -44,8 +44,118 @@
 
 <script>
 export default {
-  props: {
-    items: { type: Array, required: true }
+  data () {
+    return {
+      endpoint_uri: 'https://crudcrud.com/api/67d87f85f807443ea1ad1f0718fbb0c0/',
+      items: [
+        {
+          id: 1,
+          first_name: 'Victor',
+          last_name: 'Mbamara',
+          email: 'victor@example.com',
+          phone: '08153035817',
+          role: 'Admin'
+        },
+        {
+          id: 2,
+          first_name: 'Joshua',
+          last_name: 'Bakare',
+          email: 'victor@example.com',
+          phone: '08153035817',
+          role: 'Admin'
+        },
+        {
+          id: 3,
+          first_name: 'Jane',
+          last_name: 'Doe',
+          email: 'victor@example.com',
+          phone: '08153035817',
+          role: 'Admin'
+        },
+        {
+          id: 4,
+          first_name: 'David',
+          last_name: 'Isong',
+          email: 'victor@example.com',
+          phone: '08153035817',
+          role: 'Admin'
+        },
+        {
+          id: 5,
+          first_name: 'Mark',
+          last_name: 'Zuckerberg',
+          email: 'victor@example.com',
+          phone: '08153035817',
+          role: 'Admin'
+        }
+      ]
+    }
+  },
+
+  computed: {
+    allItemsAreChecked () {
+      const checkedItems = this.items.filter((item) => {
+        return item.is_checked === true
+      })
+
+      return checkedItems.length === this.items.length
+    }
+  },
+
+  mounted () {
+    this.items.forEach((item) => {
+      this.$set(item, 'is_checked', false)
+    })
+  },
+
+  methods: {
+    deleteItem (item) {
+      // first we make our api call to delete the item from the server
+      // make api call here
+
+      // next we delete the item from our array
+      const index = this.items.indexOf(item)
+      this.items.splice(index, 1)
+    },
+
+    getItems () {
+      fetch(this.endpoint_uri + 'employees').then((res) => {
+        this.items = res.data
+        // eslint-disable-next-line
+      }).catch((err) => {
+        // we display errors if any
+      }).finally(() => {
+        // we stop our loading button
+      })
+    },
+
+    toggleItemCheck (item) {
+      if (item.is_checked) {
+        item.is_checked = false
+      } else {
+        item.is_checked = true
+      }
+    },
+
+    toggleCheckAllItems () {
+      if (this.allItemsAreChecked) {
+        this.checkAllItems()
+      } else {
+        this.uncheckAllItems()
+      }
+    },
+
+    checkAllItems () {
+      this.items.forEach((item) => {
+        item.is_checked = true
+      })
+    },
+
+    uncheckAllItems () {
+      this.items.forEach((item) => {
+        item.is_checked = false
+      })
+    }
   }
 }
 </script>

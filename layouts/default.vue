@@ -52,4 +52,18 @@ button
     @apply text-sm
   &--with-shadow
     box-shadow: 0px 7px 15px rgba(43, 218, 83, 0.2)
+
+.form
+  box-shadow: 0px 20px 50px #EAEEE9
+  @apply mt-8 bg-white py-6 px-10 rounded
+  &__group
+    @apply mb-4 w-full
+  &__label
+    @apply capitalize text-sm
+    color: #6A7E8A
+  &__control
+    @apply border-none w-full mt-1 py-1 px-1 text-dark-accent transition-colors duration-200 ease-linear
+    border-bottom: 1px solid #E6E7EB
+    &:focus, &:active
+      @apply shadow-outline outline-none
 </style>
