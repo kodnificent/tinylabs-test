@@ -14,8 +14,12 @@ module.exports = {
         'dark-accent': '#013C61',
         gray: {
           ...defaultTheme.colors.gray,
-          100: '#F6F8F8',
+          '100': '#F6F8F8',
         }
+      },
+      spacing: {
+        '9': '2.25rem',
+        '18': '4.5rem'
       }
     }
   },

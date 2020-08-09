@@ -65,7 +65,7 @@
           </div>
 
           <div class="mt-12 flex justify-center md:justify-end">
-            <button class="btn btn--lg bg-primary text-white w-full md:w-48">
+            <button class="btn btn--lg btn--with-shadow bg-primary text-white w-full md:w-48">
               continue
             </button>
           </div>

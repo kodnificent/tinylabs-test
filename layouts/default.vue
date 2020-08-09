@@ -38,14 +38,18 @@ button
     @apply opacity-50 cursor-not-allowed
 
 .btn
-  box-shadow: 0px 7px 15px rgba(43, 218, 83, 0.2)
   border-radius: 3px
   text-transform: capitalize
-  @apply font-medium p-2
+  font-size: 16px
+  min-height: 44px
+  @apply font-medium
   &:focus, &:active
     @apply outline-none shadow-outline
   &--lg
     @apply text-lg
   &--sm
-    @apply text-sm p-1
+    min-height: 34px
+    @apply text-sm
+  &--with-shadow
+    box-shadow: 0px 7px 15px rgba(43, 218, 83, 0.2)
 </style>
