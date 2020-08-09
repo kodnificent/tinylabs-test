@@ -60,7 +60,6 @@
           </button>
         </form>
 
-        <!-- eslint-disable-next-line -->
         <form class="search-form" @submit.prevent>
           <label class="search-label">
             <search-icon />
@@ -69,6 +68,38 @@
 
           <input placeholder="Enter staff name here..." class="search-input" type="search">
         </form>
+
+        <!-- eslint-disable-next-line -->
+        <div class="flex-grow"></div>
+
+        <div class="mt-4 md:mt-0 flex items-center w-full md:w-auto">
+          <!-- eslint-disable-next-line -->
+          <div class="flex-grow"></div>
+
+          <div class="flex items-center text-dark-accent">
+            <div class="border-gray-600 rounded w-5 h-5 flex items-center justify-center" style="border-width: 1.5px;">
+              1
+            </div>
+            <div class="ml-1">
+              of
+            </div>
+            <div class="ml-1">
+              2
+            </div>
+          </div>
+
+          <div class="ml-4 flex items-center justify-center">
+            <button class="h-4 w-4 rounded-full bg-primary inline-flex justify-center items-center">
+              <span class="sr-only">previous page</span>
+              <chevron-left-icon />
+            </button>
+
+            <button class="ml-2 h-4 w-4 rounded-full bg-primary inline-flex justify-center items-center">
+              <span class="sr-only">next page</span>
+              <chevron-right-icon />
+            </button>
+          </div>
+        </div>
       </div> <!-- /action area ends -->
 
       <div class="mt-8 overflow-x-auto">
