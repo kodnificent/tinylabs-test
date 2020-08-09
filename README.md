@@ -1,5 +1,11 @@
 # tinylabs-test
 
+## Links
+
+[Dashboard](https://tinylabs-test.herokuapp.com)
+
+[Sign up page](https://tinylabs-test.herokuapp.com/signup)
+
 ## Build Setup
 
 ```bash
