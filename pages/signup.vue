@@ -45,23 +45,51 @@
           <div class="form__group flex flex-wrap">
             <div class="w-full xl:w-1/2 xl:pr-5 mb-4 xl:mb-0">
               <label class="form__label">first name</label>
-              <input type="text" class="form__control" value="Jane">
+
+              <div class="form__icon-wrapper">
+                <input type="text" class="form__control" value="Jane">
+
+                <div class="form__icon">
+                  <user-icon />
+                </div>
+              </div>
             </div>
 
             <div class="w-full xl:w-1/2 xl:pl-5">
               <label class="form__label">last name</label>
-              <input type="text" class="form__control" value="Clement">
+
+              <div class="form__icon-wrapper">
+                <input type="text" class="form__control" value="Clement">
+
+                <div class="form__icon">
+                  <user-icon />
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="form__group">
             <label class="form__label">email</label>
-            <input type="email" class="form__control" value="jane.clement@gmail.com">
+
+            <div class="form__icon-wrapper">
+              <input type="email" class="form__control" value="jane.clement@gmail.com">
+
+              <div class="form__icon">
+                <email-icon />
+              </div>
+            </div>
           </div>
 
           <div class="form__group">
             <label class="form__label">password</label>
-            <input type="password" class="form__control" value="**********">
+
+            <div class="form__icon-wrapper">
+              <input type="password" class="form__control" value="**********">
+
+              <div class="form__icon">
+                <eye-icon />
+              </div>
+            </div>
           </div>
 
           <div class="mt-12 flex justify-center md:justify-end">
@@ -94,7 +122,7 @@
 export default {
   methods: {
     submitForm () {
-      // redirect to home page
+      window.location.href = '/'
     }
   }
 }

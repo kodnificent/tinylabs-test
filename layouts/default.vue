@@ -62,8 +62,12 @@ button
     @apply capitalize text-sm
     color: #6A7E8A
   &__control
-    @apply border-none w-full mt-1 py-1 px-1 text-dark-accent transition-colors duration-200 ease-linear
+    @apply border-none w-full mt-1 py-1 pl-1 pr-6 text-dark-accent transition-colors duration-200 ease-linear
     border-bottom: 1px solid #E6E7EB
     &:focus, &:active
       @apply shadow-outline outline-none
+  &__icon-wrapper
+    @apply relative
+  &__icon
+    @apply absolute top-0 right-0 flex h-full items-center px-1
 </style>
